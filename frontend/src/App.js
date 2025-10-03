@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import '../src/index.css';
 import Login from './pages/login';
 function App() {
