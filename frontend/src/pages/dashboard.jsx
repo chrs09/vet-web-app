@@ -56,7 +56,7 @@ const Dashboard = () => {
         </header>
 
        {/* Stats Overview */}
-        <section className="p-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+        {/* <section className="p-8 grid grid-cols-1 md:grid-cols-4 gap-6">
         {[ 
             { label: "Appointments Today", value: "12", color: "bg-primary" },
             { label: "Patients", value: "128", color: "bg-secondary" },
@@ -72,44 +72,79 @@ const Dashboard = () => {
             <span className="text-2xl font-bold text-dark mt-2">{stat.value}</span>
             </div>
         ))}
-        </section>
+        </section> */}
 
         {/* Widgets */}
-        <main className="px-8 pb-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div className="bg-white rounded-2xl shadow-2xl drop-shadow-lg border border-gray-200 hover:shadow-3xl hover:drop-shadow-2xl hover:-translate-y-2 transition-all duration-300 p-6 flex flex-col">
-            <h2 className="text-lg font-semibold text-dark mb-4">Today's Appointments</h2>
-            <ul className="text-gray-600 text-sm flex-1 space-y-2">
-            <li>09:00 - Bella (Dog) - Vaccination</li>
-            <li>10:30 - Max (Cat) - Checkup</li>
-            <li>13:00 - Luna (Dog) - Surgery</li>
-            </ul>
-            <button className="mt-6 bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
-            View All
-            </button>
-        </div>
+        <main className="pl-8 pr-20 pb-8 pt-10 grid grid-cols-1 md:grid-cols-2 md:pl-20 md:pr-20 md:grid auto-rows-auto gap-5">
+          {/* First Row */}
+          <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 flex flex-col">
+            <h2 className="text-3xl font-bold text-dark mb-4">Appointments Today</h2>
+            <div className="text-7xl font-extrabold text-primary mb-2">128</div>
+            <div className="text-gray-500 text-sm">Total Scheduled for this day</div>
+            {/* <button className="mt-6 bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+              View All
+            </button> */}
+          </div>
 
-        <div className="bg-white rounded-2xl shadow-2xl drop-shadow-lg border border-gray-200 hover:shadow-3xl hover:drop-shadow-2xl hover:-translate-y-2 transition-all duration-300 p-6 flex flex-col">
-            <h2 className="text-lg font-semibold text-dark mb-4">Patients</h2>
-            <div className="text-4xl font-extrabold text-primary mb-2">128</div>
+          <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 flex flex-col">
+            <h2 className="text-3xl font-bold text-dark mb-4">Patients</h2>
+            <div className="text-7xl font-extrabold text-primary mb-2">128</div>
+            <div className="text-gray-500 text-sm">Total Registered</div>
+            {/* <button className="mt-6 bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
+              Add Patient
+            </button> */}
+          </div>
+
+          
+          <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 flex flex-col">
+            <h2 className="text-3xl font-bold text-dark mb-4">Upcoming Appointments</h2>
+            <div className="text-7xl font-extrabold text-primary mb-2">128</div>
+            <div className="text-4xl font-extrabold text-primary mb-2">Snowy (Dog) - Vaccination</div>
+            <div className="text-gray text-2xl font-light text-dark">30 minutes</div>
+          </div>
+
+          
+          {/* Quick Actions */}
+          <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-6">
+            <div className="text-gray-800 text-3xl font-bold mb-4">Quick Actions</div>
+
+            <div className="flex flex-wrap gap-3 mb-3 h-16">
+              <button className="flex-1 bg-green-600 text-white py-3 rounded-lg font-medium hover:bg-green-700 transition flex items-center justify-center gap-2">
+                <span>✅</span> New Appointment
+              </button>
+              <button className="flex-1 bg-yellow-500 text-white py-3 rounded-lg font-medium hover:bg-yellow-600 transition flex items-center justify-center gap-2">
+                <span>➕</span> Add Staff
+              </button>
+            </div>
+
+            <button className="h-16 w-full bg-red-500 text-white py-3 rounded-lg font-medium hover:bg-red-600 transition flex items-center justify-center gap-2">
+              <span>🚨</span> Record Emergency
+            </button>
+          </div>
+
+
+          
+          <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 flex flex-col">
+            <h2 className="text-3xl font-bold text-dark mb-4">Recent Activities</h2>
+            <div className="text-5xl font-extrabold text-primary mb-2">128</div>
+            <div className="text-5xl font-extrabold text-primary mb-2">128</div>
+            <div className="text-5xl font-extrabold text-primary mb-2">128</div>
+            
+          </div>
+
+          
+          <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 flex flex-col">
+            <h2 className="text-3xl font-bold text-dark mb-4">Reports</h2>
+            <div className="text-7xl font-extrabold text-primary mb-2">128</div>
             <div className="text-gray-500 text-sm">Total Registered</div>
             <button className="mt-6 bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
-            Add Patient
+              Add Patient
             </button>
-        </div>
+          </div>
 
-        <div className="bg-white rounded-2xl shadow-2xl drop-shadow-lg border border-gray-200 hover:shadow-3xl hover:drop-shadow-2xl hover:-translate-y-2 transition-all duration-300 p-6 flex flex-col">
-            <h2 className="text-lg font-semibold text-dark mb-4">Quick Actions</h2>
-            <button className="mb-3 bg-primary text-white py-2 rounded-lg hover:bg-secondary transition">
-            New Appointment
-            </button>
-            <button className="mb-3 bg-accent text-white py-2 rounded-lg hover:opacity-90 transition">
-            Add Staff
-            </button>
-            <button className="bg-red-500 text-white py-2 rounded-lg hover:bg-red-600 transition">
-            Emergency
-            </button>
-        </div>
+          
         </main>
+
       </div>
     </div>
   );
